@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do You Love Me?</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#ffdde1,#ee9ca7);
+}
+
+.container{
+    background:white;
+    padding:50px 40px;
+    border-radius:25px;
+    text-align:center;
+    max-width:420px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.15);
+    position:relative;
+}
+
+h1{
+    color:#e63946;
+    font-weight:600;
+}
+
+.message{
+    font-size:18px;
+    margin-top:20px;
+    line-height:1.6;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+button{
+    border:none;
+    padding:14px 28px;
+    font-size:16px;
+    border-radius:12px;
+    margin:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.yes{
+    background:#2a9d8f;
+    color:white;
+}
+
+.yes:hover{
+    transform:scale(1.08);
+}
+
+.no{
+    background:#e63946;
+    color:white;
+}
+
+.no:hover{
+    transform:scale(1.08);
+}
+
+#response{
+    margin-top:20px;
+    font-weight:500;
+    color:#e63946;
+    min-height:30px;
+    transition:0.3s;
+}
+
+.heart-bg{
+    position:absolute;
+    font-size:120px;
+    opacity:0.06;
+    top:-30px;
+    right:-20px;
+    color:#e63946;
+}
+
+.success{
+    font-size:20px;
+    color:#2a9d8f;
+    font-weight:600;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<i class="fa-solid fa-heart heart-bg"></i>
+
+<h1>
+Do you love me?
+<i class="fa-solid fa-heart"></i>
+</h1>
+
+<p class="message">
+Silver or gold, I have none,<br>
+but my love for you is indescribable.<br>
+I love you with all my heart
+<i class="fa-solid fa-heart"></i>
+</p>
+
+<div class="buttons">
+
+<button class="yes" onclick="yesClicked()">
+Yes <i class="fa-solid fa-heart"></i>
+</button>
+
+<button class="no" onclick="noClicked()">
+<span id="noText">No</span>
+ <i class="fa-solid fa-face-frown"></i>
+</button>
+
+</div>
+
+<div id="response"></div>
+
+</div>
+
+<script>
+
+let messages = [
+"Na only you I get",
+"Jo na Baba Modibbo",
+"Ololufemi mi",
+"Ajadi please",
+"Okomi please",
+"Don't break my heart",
+"I go cry o",
+"Abeg press Yes"
+]
+
+let index = 0
+
+function noClicked(){
+    document.getElementById("noText").innerHTML = messages[index]
+    index++
+
+    if(index >= messages.length){
+        index = 0
+    }
+}
+
+function yesClicked(){
+    document.querySelector(".container").innerHTML = `
+    <h1 class='success'>
+    Yay! I love you forever <i class="fa-solid fa-heart"></i>
+    </h1>
+    <p>
+    You are my everything <i class="fa-solid fa-heart"></i>
+    </p>
+    `
+}
+
+</script>
+
+</body>
+</html>
